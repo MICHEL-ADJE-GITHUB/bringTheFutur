@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:real_utopiaa/HomePage.dart';
-import 'package:real_utopiaa/const.dart';
 
-class onboarding extends StatefulWidget {
-  const onboarding({Key? key}) : super(key: key);
+import 'HomePage.dart';
+
+class OnBoarding extends StatefulWidget {
+  const OnBoarding({Key? key}) : super(key: key);
 
   @override
-  _onboardingState createState() => _onboardingState();
+  _OnBoardingState createState() => _OnBoardingState();
 }
 
-class _onboardingState extends State<onboarding> {
+class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +51,9 @@ class _onboardingState extends State<onboarding> {
                 child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      color: ksecondaryColor,
+                      color: Colors.white,
                     ),
-                    child: Icon(Icons.arrow_right_outlined,size: 30,)),
+                    child: Icon(Icons.arrow_right_alt_rounded,size: 50,)),
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));

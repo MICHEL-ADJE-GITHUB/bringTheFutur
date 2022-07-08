@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:real_utopiaa/ArchitectCatalog.dart';
-import 'package:real_utopiaa/UserCatalog.dart';
-import 'package:real_utopiaa/const.dart';
+
+import 'catalogue.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,14 +24,16 @@ class _HomePageState extends State<HomePage> {
             end: Alignment.bottomCenter,
             )
           ),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, 
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
         children: [
-          Container(
-            margin: EdgeInsets.only(top: 20, bottom: 10),
-            height: 350,
-            width: 350,
-            //changer l'image
-            child: Image.asset('assets/images/onboarding.jpeg'),
+          Padding(
+            padding: const EdgeInsets.only(top: 35),
+            child: Container(
+              height: MediaQuery.of(context).size.height/2,
+              width: MediaQuery.of(context).size.width/0.5,
+              //changer l'image
+              child: Image.asset('assets/images/image2.png'),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,11 +51,14 @@ class _HomePageState extends State<HomePage> {
             children: [
               GestureDetector(
                 child: Container(
-                  height: 34,
-                  width: 139,
+                  height: MediaQuery.of(context).size.height/4,
+                  width: MediaQuery.of(context).size.width/2.5,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.white
+                    ),
+                    color: Colors.white12,
                   ),
                   child: Center(
                     child: Text(
@@ -62,21 +66,24 @@ class _HomePageState extends State<HomePage> {
                       style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 55, 159, 243)),
+                          color: Colors.white),
+                          
                     ),
                   ),
-                  padding: EdgeInsets.only(left: 40, right: 25),
                 ),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => UserCatalog()));
                 },
               ),
               GestureDetector(
                 child: Container(
+                  height: MediaQuery.of(context).size.height/4,
+                  width: MediaQuery.of(context).size.width/2.5,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white
+                    ),
+                    shape: BoxShape.circle,
+                    color: Colors.white12,
                   ),
                   child: Center(
                     child: Text(
@@ -84,14 +91,13 @@ class _HomePageState extends State<HomePage> {
                       style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 55, 159, 243)),
+                          color: Colors.white),
                     ),
                   ),
-                  padding: EdgeInsets.only(left: 40, right: 25),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => ArchitectCatalog()));
+                      MaterialPageRoute(builder: (_) => CataloguePage()));
                 },
               ),
             ],
